@@ -234,7 +234,7 @@ class unet():
     def train(self, train_gen, valid_gen, nEpochs, model_name):
         
         print('Training process:')
-        callbacks = [ModelCheckpoint(model_name, verbose=1, save_best_only=True, save_weights_only=True), EarlyStopping(monitor='val_loss', patience=50)]
+        callbacks = [ModelCheckpoint(model_name, verbose=1, save_best_only=True, save_weights_only=True), EarlyStopping(monitor='val_loss', patience=25)]
         history = self.model.fit(train_gen, validation_data=valid_gen, epochs=nEpochs, batch_size=self.batch_size, callbacks=callbacks)
         
         return history
