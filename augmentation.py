@@ -120,19 +120,23 @@ def combine_aug(X, y, do):
     """
     Xnew, ynew = X, y
     
-    if do[0] == 1:
-        Xnew, ynew = flip3D(Xnew, ynew)
-        
-    if do[1] == 1:
-        Xnew, ynew = brightness(Xnew, ynew)   
-        
-    if do[2] == 1:
-        Xnew, ynew = rotation_zoom3D(Xnew, ynew)
-        
-    if do[3] == 1:
-        Xnew, ynew = elastic(Xnew, ynew)
-        
-    return Xnew, ynew
+    # make sure to use at least 25% of original images
+    if np.random.random_sample()>0.75:
+        return Xnew, ynew
+    else:  
+        if do[0] == 1:
+            Xnew, ynew = flip3D(Xnew, ynew)
+
+        if do[1] == 1:
+            Xnew, ynew = brightness(Xnew, ynew)   
+
+        if do[2] == 1:
+            Xnew, ynew = rotation_zoom3D(Xnew, ynew)
+
+        if do[3] == 1:
+            Xnew, ynew = elastic(Xnew, ynew)
+
+        return Xnew, ynew
 
 def aug_batch(Xb, Yb, decisions):
     """
