@@ -7,12 +7,9 @@ Pay attention that the aim of the paper was not to implement a model able to do 
 
 The image augmentation techniques used are:
 
-Patch extraction: from each original volume a sub-volume
-of shape 128 × 128 × 128 is extracted around its centre.
-In this way each sub-volume mostly contains brain tissue
-and not the surrounding background.
-- Flipping: random flipping of one of the three different axes with 1/3 probability.
-- Rotation: rotation applied to each axis with angles randomly chosen from a uniform distribution with range between 0° and 15°, 30°, 60°, or 90°.
-- Scale: scaling applied to each axis by a factor randomly chosen from a uniform distribution with range ±10% or ±20%.
-- Brightness: power-law γ intensity transformation with its parameters gain (g) and γ chosen randomly between 0.8 - 1.2 from a uniform distribution. The intensity (I) is randomly changed according to the formula: Inew = g · I^γ.
-- Elastic deformation: elastic deformation with square deformation grid with displacements sampled from from a normal distribution with standard deviation σ = 2, 5, 8, or 10 voxels, where the smoothing is done by a spline filter with order 3 in each dimension.
+*Patch extraction*: from each original volume a sub-volume of shape 128 × 128 × 128 is extracted around its centre. In this way each sub-volume mostly contains brain tissue and not the surrounding background.
+- *Flipping*: random flipping of one of the three different axes with 1/3 probability.
+- *Rotation*: rotation applied to each axis with angles randomly chosen from a uniform distribution with range between 0° and 15°, 30°, 60°, or 90°.
+- *Scale*: scaling applied to each axis by a factor randomly chosen from a uniform distribution with range ±10% or ±20%.
+- *Brightness*: power-law γ intensity transformation with its parameters gain (g) and γ chosen randomly between 0.8 - 1.2 from a uniform distribution. The intensity (I) is randomly changed according to the formula: Inew = g · I^γ.
+- *Elastic deformation*: elastic deformation with square deformation grid with displacements sampled from from a normal distribution with standard deviation σ = 2, 5, 8, or 10 voxels, where the smoothing is done by a spline filter with order 3 in each dimension.
