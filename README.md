@@ -6,8 +6,7 @@ For this project, we used the [BraTS 2020](https://www.med.upenn.edu/cbica/brats
 Pay attention that the aim of the paper was not to implement a model able to do image segmentation as the state-of-the-art ones, but to verify how different augmentation techniques and paramenter change the model performance.
 
 The image augmentation techniques used are:
-
-*Patch extraction*: from each original volume a sub-volume of shape 128 × 128 × 128 is extracted around its centre. In this way each sub-volume mostly contains brain tissue and not the surrounding background.
+- *Patch extraction*: from each original volume a sub-volume of shape 128 × 128 × 128 is extracted around its centre. In this way each sub-volume mostly contains brain tissue and not the surrounding background.
 - *Flipping*: random flipping of one of the three different axes with 1/3 probability.
 - *Rotation*: rotation applied to each axis with angles randomly chosen from a uniform distribution with range between 0° and 15°, 30°, 60°, or 90°.
 - *Scale*: scaling applied to each axis by a factor randomly chosen from a uniform distribution with range ±10% or ±20%.
