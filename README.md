@@ -1,7 +1,7 @@
-# augmentation
+# Augmentation techniques
 Chechink the performance of different augmentation techniques on a 3D U-Net, have a look to the paper [What is the best data augmentation approach for brain tumor segmentation using 3D U-Net?](https://arxiv.org/abs/2010.13372).
 
-For this project, we used the [BraTS](https://www.med.upenn.edu/cbica/brats2020/data.html) 2020 training and validation set.
+For this project, we used the [BraTS 2020](https://www.med.upenn.edu/cbica/brats2020/data.html) training and validation set.
 
 Pay attention that the aim of the paper was not to implement a model able to do image segmentation as the state-of-the-art ones, but to verify how different augmentation techniques and paramenter change the model performance.
 
